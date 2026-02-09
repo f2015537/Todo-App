@@ -16,7 +16,7 @@ app.post("/todo", async (req, res) => {
   }
   // put it in mongodb
   const createdTodo = await Todo.create(result.data);
-  return res.json({ msg: "Todo created with id " + createdTodo.id });
+  return res.json({ createdTodo });
 });
 
 app.get("/todos", async (req, res) => {
